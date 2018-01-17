@@ -9,8 +9,8 @@ IF EXIST "G:\test.txt" (
 	exit
 ) ELSE (
     ECHO share not found connecting drive
-	explorer G:
+	start /min explorer G:
 	timeout 3 
-	taskkill /im explorer.exe /FI "WINDOWTITLE eq G:\\"
-	exit
+	taskkill /im explorer.exe
+
 )
