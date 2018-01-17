@@ -4,13 +4,15 @@ REM requirements for this script. 1) test.txt at the root of the share location.
 IF EXIST "G:\test.txt" (
     ECHO share found
 	timeout 3
-	cd "D:\Program Files (x86)\Steam\"
-	start steam.exe\
+	cd "%HOMEPATH%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam"
+	start steam
 	exit
 ) ELSE (
     ECHO share not found connecting drive
 	start /min explorer G:
-	timeout 3 
+	timeout 3
 	taskkill /im explorer.exe
+	cd "%HOMEPATH%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam"
+	start steam
 
 )
